@@ -8,6 +8,7 @@ This demo is meant to explain how to use functors as predicates or comparators, 
 2. Open rate_my_professor.cpp and implement the "TODO" sections
 3. Compile and run with:
 > g++ -std=c++11 rate_my_professor.cpp -o rmp
+>
 > ./rmp
 
 ### Demo introduction:
@@ -38,14 +39,21 @@ This returns true whenever Duck d1 has a name that is less than Duck d2's name. 
 A predicate is another special type of functor used to check a property of an object. Predicates return either "true" or "false" when passed a single object. For example, this functor can be instantiated with a private member variable "height". You can then pass "Person" objects into it and return whether Person "perry" is taller than "height."
 
 >class Person {
+>
 >public:
+>
 >   Person(int height_in) : height(height_in) {}
 >
 >   bool operator()(const Person& perry) {
+>
 >      return perry.getHeight() > height;
+>
 >   }
+>
 >private:
+>
 >   int height;
+>
 >};
 
 #### std::map
@@ -57,16 +65,23 @@ A map is basically a binary search tree whose elements are of type std::pair. Ea
 It can sometimes be tricky to see what the [ ] operator is supposed to do in a map. The following example demonstrates how it works:
 
 >// people_gpas is a map that contains keys of type std::string and values of type double
+>
 >// we have constructed the map this way so that we can look up people by name to find
+>
 >// their GPA
+>
 >std::map<std::string, double> people_gpas;
 >
 >// add a person to the map and set their GPA -- using [ ] on a key that doesn't exist adds the key to the map
+>
 >// and default constructs a value
+>
 >people_gpas["Eric"] = 4.0;
 >
 >// change Eric's GPA -- using [ ] on a key that already exists will not add any elements to the map, but will
+>
 >// simply return the value by reference (so we can change it if we want)
+>
 >people_gpas["Eric"] = 3.8;
 
 #### std::pair
@@ -75,12 +90,15 @@ std::pair is what it sounds like-- it's a pair of elements. We can make a pair w
 
 We can make a pair and access its elements as demonstrated below:
 >// make a pair with a string and a double
+>
 >std::pair<std::string, double> my_pair;
 >
 >// now set the first value in the pair to be "Eric"
+>
 >my_pair.first = "Eric";
 >
 >// now set the second value in the pair to be 4.0
+>
 >my_pair.second = 4.0
 
 
