@@ -43,11 +43,11 @@ This returns true whenever Duck d1 has a name that is less than Duck d2's name. 
 
 A predicate is another special type of functor used to check a property of an object. Predicates return either "true" or "false" when passed a single object. For example, this functor can be instantiated with a private member variable "height". You can then pass "Person" objects into it and return whether Person "perry" is taller than "height."
 
->class Person {
+>class TestHeight {
 >
 >public:
 >
->   Person(int height_in) : height(height_in) {}
+>   TestHeight(int height_in) : height(height_in) {}
 >
 >   bool operator()(const Person& perry) {
 >
@@ -81,7 +81,11 @@ It can sometimes be tricky to see what the [ ] operator is supposed to do in a m
 >
 >// and default constructs a value
 >
->people_gpas["Eric"] = 4.0;
+>people_gpas["Eric"] ;             // now the pair ("Eric", 0.0) is in the map
+>
+>people_gpas["Eric"] = 4.0;    // now the pair ("Eric", 4.0) is in the map
+>
+>// note that this statement would have done exactly the same thing as the two combined statements above:
 >
 >// change Eric's GPA -- using [ ] on a key that already exists will not add any elements to the map, but will
 >
