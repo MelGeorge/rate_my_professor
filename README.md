@@ -26,10 +26,15 @@ Functors are class-type objects that behave like functions. They "behave like fu
 A comparator is a special type of functor used to compare objects. Comparators often follow a "less than pattern," and return true when the first object passed into the comparator is "less than" the second object passed into the comparator. Here's an example of a functor you may have seen in lecture, which compares two Duck objects:
 
 >class DuckNameLess {
+>
 >public:
+>
 >    bool operator()(const Duck &d1, const Duck &d2) const {
+>
 >       return d1.getName() < d2.getName();
+>
 >   }
+>
 >};
 
 This returns true whenever Duck d1 has a name that is less than Duck d2's name. This functor might be useful to us if we are trying to, for example, sort Ducks by name. If we wanted to use std::sort to sort our Ducks for us (get our Ducks in a row, if you will), we would need some way to tell std::sort what it means for a Duck to be "less than" another Duck.
