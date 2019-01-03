@@ -91,7 +91,7 @@ It can sometimes be tricky to see what the [ ] operator is supposed to do in a m
 >
 >// simply return the value by reference (so we can change it if we want)
 >
->people_gpas["Eric"] = 3.8;
+>people_gpas["Eric"] = 4.0;
 
 #### std::pair
 
